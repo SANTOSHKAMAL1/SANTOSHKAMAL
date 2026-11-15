@@ -224,6 +224,74 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.6rem
 
 @media (prefers-reduced-motion:reduce){*,*::before{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
 [hidden]{display:none!important}
+
+/* ---- GitHub section ---- */
+.gh-top{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr) minmax(0,1.3fr);gap:16px;margin-bottom:clamp(36px,5vw,56px)}
+.gh-card,.gh-stats,.gh-langs{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:1.2rem;min-width:0}
+.gh-card{display:flex;flex-direction:column;gap:.8rem;text-decoration:none;position:relative;overflow:hidden;transition:transform .25s,border-color .25s}
+.gh-card:hover{transform:translateY(-3px);border-color:var(--ink)}
+.gh-card img{width:96px;height:96px;border-radius:50%;object-fit:cover;object-position:50% 10%;background:var(--signal);border:3px solid var(--paper);box-shadow:0 0 0 2px var(--signal)}
+.gh-card b{display:block;font-family:var(--f-display);font-size:1.3rem;font-variation-settings:"wdth" 110}
+.gh-card .mono{color:var(--muted)}
+.gh-follow{align-self:flex-start;font-weight:600;font-size:.88rem;padding:.45rem .9rem;border-radius:999px;background:var(--ink);color:var(--paper)}
+.gh-stats{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.gh-stats b{display:block;font-family:var(--f-display);font-size:clamp(1.8rem,3.4vw,2.6rem);font-weight:800;font-variation-settings:"wdth" 115;line-height:1;font-variant-numeric:tabular-nums}
+.gh-stats span{font-size:.82rem;color:var(--muted)}
+.gh-bar{display:flex;height:12px;border-radius:999px;overflow:hidden;background:var(--line);gap:2px}
+.gh-bar i{display:block;height:100%;transform-origin:left;animation:ghGrow 1s cubic-bezier(.2,.7,.2,1) both}
+@keyframes ghGrow{from{transform:scaleX(0)}to{transform:none}}
+.gh-legend{list-style:none;margin:.9rem 0 0;padding:0;display:flex;flex-wrap:wrap;gap:.4rem 1rem;font-size:.82rem}
+.gh-legend li{display:flex;align-items:center;gap:.4rem}
+.gh-legend em{font-style:normal;color:var(--muted);font-variant-numeric:tabular-nums}
+.ldot{width:10px;height:10px;border-radius:50%;flex:none;display:inline-block}
+.gh-years{display:flex;align-items:flex-end;gap:10px;height:140px;margin-top:1.1rem;padding-top:2rem;border-top:1px solid var(--line);position:relative}
+.gh-years::before{content:"repos created per year";position:absolute;top:.6rem;left:0;font-family:var(--f-mono);font-size:.66rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}
+.gh-years div{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;height:100%;justify-content:flex-end}
+.gh-years i{flex:none;display:block;width:100%;max-width:42px;background:var(--volt);border-radius:6px 6px 2px 2px;min-height:4px}
+.gh-years span{font-family:var(--f-mono);font-size:.68rem;color:var(--muted)}
+.gh-years b{font-size:.75rem}
+.gh-sub{font-family:var(--f-display);font-size:1.35rem;font-weight:800;font-variation-settings:"wdth" 108;margin:0 0 1rem}
+.gh-live{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-bottom:clamp(36px,5vw,56px)}
+.site{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}
+.site:hover{transform:translateY(-4px);box-shadow:0 24px 40px -24px rgba(14,17,22,.45)}
+.site-bar{display:flex;align-items:center;gap:5px;padding:.55rem .7rem;border-bottom:1px solid var(--line);background:var(--paper)}
+.site-bar i{width:8px;height:8px;border-radius:50%;background:var(--line)}
+.site-bar span{margin-left:.4rem;font-family:var(--f-mono);font-size:.66rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.site-hero{aspect-ratio:16/9;display:grid;place-items:center;position:relative;overflow:hidden;color:#fff;font-family:var(--f-display);font-weight:900;font-size:2.4rem;font-variation-settings:"wdth" 125;letter-spacing:-.03em}
+.site-hero::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(255,255,255,.08) 0 1px,transparent 1px 22px),repeating-linear-gradient(0deg,rgba(255,255,255,.08) 0 1px,transparent 1px 22px)}
+.site-hero .pulse{position:absolute;top:10px;right:10px;display:flex;align-items:center;gap:6px;font-family:var(--f-mono);font-size:.62rem;font-weight:500;letter-spacing:.06em;background:rgba(0,0,0,.35);padding:.25rem .5rem;border-radius:999px}
+.site-hero .pulse::before{content:"";width:7px;height:7px;border-radius:50%;background:#3DDC84;animation:pls 1.6s infinite}
+@keyframes pls{50%{opacity:.25}}
+.site-body{padding:1rem;display:flex;flex-direction:column;gap:.5rem;flex:1}
+.site-body h4{margin:0;font-family:var(--f-display);font-size:1.1rem;font-variation-settings:"wdth" 104}
+.site-body p{margin:0;font-size:.86rem;color:var(--muted);flex:1}
+.site-act{display:flex;gap:.5rem;flex-wrap:wrap}
+.site-act a{font-family:var(--f-mono);font-size:.72rem;padding:.4rem .75rem;border-radius:8px;border:1px solid var(--ink);text-decoration:none}
+.site-act a.v{background:var(--ink);color:var(--paper)}
+.site-act a:hover{background:var(--signal);border-color:var(--signal);color:var(--signal-ink)}
+.gh-tools{display:flex;flex-wrap:wrap;align-items:center;gap:.8rem 1rem;margin-bottom:1rem}
+.gh-tools input{flex:1 1 200px;max-width:320px;font:inherit;font-size:.92rem;padding:.6rem .9rem;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink)}
+.gh-chips{display:flex;flex-wrap:wrap;gap:.4rem}
+.gchip{font-family:var(--f-mono);font-size:.72rem;padding:.4rem .75rem;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;display:inline-flex;align-items:center;gap:.35rem}
+.gchip[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.gh-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.gh-list li a{display:grid;grid-template-columns:auto 1fr auto;gap:.2rem .7rem;align-items:center;padding:.9rem 1rem;border:1px solid var(--line);border-radius:14px;background:var(--card);text-decoration:none;transition:border-color .2s,transform .2s;min-width:0;height:100%}
+.gh-list li a:hover{border-color:var(--ink);transform:translateY(-2px)}
+.gh-list svg{color:var(--muted)}
+.gh-list .rn{font-weight:600;font-size:.95rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.gh-list .rt{font-family:var(--f-mono);font-size:.68rem;color:var(--muted);white-space:nowrap}
+.gh-list .rd{grid-column:2/-1;font-size:.82rem;color:var(--muted);display:flex;gap:.8rem;flex-wrap:wrap;align-items:center;min-width:0}
+.gh-list .rd span{display:inline-flex;align-items:center;gap:.35rem}
+.gh-list .rd q{quotes:none;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:100%}
+.gh-list .new{font-family:var(--f-mono);font-size:.62rem;background:var(--signal);color:var(--signal-ink);padding:.1rem .4rem;border-radius:4px}
+.gh-empty{grid-column:1/-1;color:var(--muted);padding:1rem 0}
+.gh-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem;margin-top:1.4rem}
+.gh-foot .mono{color:var(--muted);display:flex;align-items:center;gap:.4rem}
+.dlg-links{display:flex;flex-wrap:wrap;gap:.6rem}.dlg-links a{font-weight:600;font-size:.9rem;padding:.5rem .9rem;border-radius:10px;border:1.5px solid var(--ink);text-decoration:none}.dlg-links a:hover{background:var(--ink);color:var(--paper)}
+.gh-foot .mono.live::before{content:"";width:8px;height:8px;border-radius:50%;background:#1DB954}
+@media (max-width:1000px){.gh-top{grid-template-columns:1fr 1fr}.gh-langs{grid-column:1/-1}.gh-live{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){.gh-top,.gh-live,.gh-list{grid-template-columns:1fr}}
+
 /* ---- photo cutouts ---- */
 .frame.cut{overflow:visible;box-shadow:none;border-radius:0}
 .frame.cut::before{content:"";position:absolute;inset:22% 0 0 0;background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:0 30px 60px -30px rgba(14,17,22,.45)}
@@ -394,7 +462,7 @@ h2 .enc,.brand .enc{color:var(--volt)}
   <div class="wrap">
     <a class="brand" href="#top"><i>SK</i>Santosh Kamal</a>
     <nav class="links" aria-label="Sections">
-      <a href="#services">Services</a><a href="#work">Work</a><a href="#east-asia">East Asia</a><a href="#experience">Experience</a><a href="#contact">Contact</a>
+      <a href="#services">Services</a><a href="#work">Work</a><a href="#github">GitHub</a><a href="#east-asia">East Asia</a><a href="#experience">Experience</a><a href="#contact">Contact</a>
     </nav>
     <div class="nav-r">
       <span class="mono clock" id="clock">Bengaluru · IST</span>
@@ -595,6 +663,50 @@ h2 .enc,.brand .enc{color:var(--volt)}
   </div>
 </section>
 
+<section class="sec" id="github" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="stack"><span class="eyebrow">Open on GitHub</span><h2>Built in the open</h2></div>
+      <p>Every repository below is public. The list pulls straight from GitHub each time this page loads, so it is never out of date.</p>
+    </div>
+
+    <div class="gh-top">
+      <a class="gh-card" href="https://github.com/SANTOSHKAMAL1" target="_blank" rel="noopener">
+        <img src="images/santosh-headphones.webp" alt="" width="1000" height="926" loading="lazy">
+        <div><b>Santosh Kamal</b><span class="mono">@SANTOSHKAMAL1</span></div>
+        <span class="gh-follow">Follow ↗</span>
+      </a>
+      <div class="gh-stats">
+        <div><b id="ghRepos">37</b><span>public repositories</span></div>
+        <div><b id="ghLangs">5</b><span>languages in use</span></div>
+        <div><b id="ghLive">4</b><span>live sites</span></div>
+        <div><b id="ghSince">2024</b><span>building in public since</span></div>
+      </div>
+      <div class="gh-langs">
+        <div class="gh-bar" id="ghBar" role="img" aria-label="Language breakdown"></div>
+        <ul class="gh-legend" id="ghLegend"></ul>
+        <div class="gh-years" id="ghYears" aria-label="Repositories created per year"></div>
+      </div>
+    </div>
+
+    <h3 class="gh-sub">Live on the web</h3>
+    <div class="gh-live" id="ghLiveGrid"></div>
+
+    <div class="gh-explore">
+      <div class="gh-tools">
+        <h3 class="gh-sub" style="margin:0">All repositories</h3>
+        <input type="search" id="ghQ" placeholder="Search repos…" aria-label="Search repositories">
+        <div class="gh-chips" id="ghChips" role="group" aria-label="Filter by language"></div>
+      </div>
+      <ul class="gh-list" id="ghList"></ul>
+      <div class="gh-foot">
+        <button class="btn ghost" id="ghMore">Show all repositories</button>
+        <span class="mono" id="ghSync">snapshot · Nov 2026</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="sec" id="east-asia" style="padding-top:0">
   <div class="wrap ea-grid">
     <div class="ea-txt">
@@ -747,8 +859,8 @@ var IMG={"degree": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAcFBQYFBAcGBgYIBwcICxILCwoK
 var P={
  degree:{t:"AI Degree Guidance System",tag:"AI · RAG · Neo4j",d:["Students ask what to study and get answers drawn from real programme data. I built the whole retrieval pipeline from scratch, then added a graph of programmes, prerequisites and career paths so recommendations follow real relationships."],pts:["FAISS vector search over Sentence-Transformer embeddings","L2-distance indexing cut hallucinations significantly","Neo4j models programme, prerequisite and career links","MCP handles structured tool use between components; Flan-T5 writes the final answer","UI/UX designed from scratch, hosted with custom domain and SSL"],st:"Python · FAISS · Sentence-Transformers · Neo4j · MCP · Flan-T5"},
  draft:{t:"Draft Space",tag:"AI newsletter generator · adopted officially",d:["Started as a personal project and was then adopted officially at JAIN University for internal newsletters. Staff fill a simple form and Mistral Large turns it into a polished, web-styled newsletter."],pts:["Form-style input, LLM-written output","MongoDB stores every issue","SMTP automation sends to all recipients with zero manual work","Git-managed codebase, deployed with SSL"],st:"Python · Mistral Large · MongoDB · SMTP"},
- attendance:{t:"Intern Attendance Portal",tag:"Face recognition · GPS detection",d:["Interns log in with face recognition or GPS-based campus detection, so physical presence is verified rather than self-reported."],pts:["Admin dashboard for user management","Shift-wise login records and real-time attendance reports","Fully responsive across mobile and desktop","Designed and hosted end to end with SSL"],st:"Python · Face recognition · Geolocation · Responsive web"},
- riasec:{t:"RIASEC Degree Recommender",tag:"Holland Codes · psychometrics",d:["Users complete a RIASEC assessment and receive degree recommendations matched to their personality profile, across UG and PG programmes."],pts:["Recommendation engine maps profiles to programmes","Researched LinkedIn Career AI and similar platforms","Built to go deeper on recommendation relevance","Independently designed, deployed and hosted with SSL"],st:"Python · Holland Codes · Matching engine"},
+ attendance:{t:"Intern Attendance Portal",tag:"Face recognition · GPS detection",d:["Interns log in with face recognition or GPS-based campus detection, so physical presence is verified rather than self-reported."],pts:["Admin dashboard for user management","Shift-wise login records and real-time attendance reports","Fully responsive across mobile and desktop","Designed and hosted end to end with SSL"],st:"Python · Face recognition · Geolocation · Responsive web",live:"https://attendance-portal-gold.vercel.app",code:"https://github.com/SANTOSHKAMAL1/attendance-portal"},
+ riasec:{t:"RIASEC Degree Recommender",tag:"Holland Codes · psychometrics",d:["Users complete a RIASEC assessment and receive degree recommendations matched to their personality profile, across UG and PG programmes."],pts:["Recommendation engine maps profiles to programmes","Researched LinkedIn Career AI and similar platforms","Built to go deeper on recommendation relevance","Independently designed, deployed and hosted with SSL"],st:"Python · Holland Codes · Matching engine",code:"https://github.com/SANTOSHKAMAL1/RIASEC-SURVEY"},
  workflow:{t:"Workflow Automation Suite",tag:"n8n · Google Sheets · Apps Script",d:["A set of automations that lets non-technical staff hand off repetitive daily work, each wrapped in a clean interface."],pts:["Mail collection, project tracking and data aggregation","Scheduled reporting","Google Sheets as a live source for dashboards via Apps Script triggers"],st:"n8n · Google Sheets · Apps Script · SMTP"},
  internship:{t:"Student Internship Portal",tag:"Career tracking",d:["Students search, apply for and track internships and career milestones from one place."],pts:["Application status tracking","Company listings","Python backend with Jinja2 templates","Hosted independently with SSL and custom domain"],st:"Python · Jinja2 · Templates"},
  pathfinder:{t:"Path-Finding Visualizer",tag:"A* · AO* · Greedy · BFS · DFS · Dijkstra",d:["An interactive visualizer that runs six search algorithms on the same grid side by side. Used as a teaching tool for students."],pts:["Set start and end nodes and place obstacles","Watch each algorithm solve in real time","Compares optimality, completeness and time complexity"],st:"Python · Algorithms"},
@@ -837,7 +949,7 @@ function openP(k,from){
   document.getElementById('dlgImg').src=src(k);
   document.getElementById('dlgTitle').textContent=p.t;
   document.getElementById('dlgTag').textContent=p.tag;
-  document.getElementById('dlgBody').innerHTML=p.d.map(function(x){return '<p>'+x+'</p>'}).join('')+'<ul>'+p.pts.map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul><p class="mono">'+p.st+'</p>';
+  document.getElementById('dlgBody').innerHTML=p.d.map(function(x){return '<p>'+x+'</p>'}).join('')+'<ul>'+p.pts.map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul><p class="mono">'+p.st+'</p>'+((p.live||p.code)?'<p class="dlg-links">'+(p.live?'<a href="'+p.live+'" target="_blank" rel="noopener">Visit live site ↗</a>':'')+(p.code?'<a href="'+p.code+'" target="_blank" rel="noopener">View code on GitHub ↗</a>':'')+'</p>':'');
   ov.hidden=false;document.body.style.overflow='hidden';
   document.getElementById('dlgClose').focus({preventScroll:true});
   if(!RM&&from&&dlg.animate){
@@ -867,6 +979,57 @@ document.querySelectorAll('[data-copy]').forEach(function(b){b.addEventListener(
   function sel(){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected, press Ctrl+C';setTimeout(function(){b.textContent=old},2200)}
   try{navigator.clipboard.writeText(t).then(done,sel)}catch(e){sel()}
 })});
+
+
+/* GitHub section */
+(function(){
+  var USER='SANTOSHKAMAL1',SNAP=[{"c":"2025-03-25","d":"","h":"","l":"CSS","n":"office-of-academic","p":"2025-03-25","s":1},{"c":"2025-09-24","d":"","h":"","l":"HTML","n":"ooa-jain","p":"2025-09-24","s":0},{"c":"2024-05-13","d":"","h":"","l":null,"n":"K-Means-clustering-MACHINE-LEARNING","p":"2024-05-13","s":0},{"c":"2025-06-04","d":"","h":"","l":null,"n":"jain-project","p":"2025-06-04","s":0},{"c":"2025-08-06","d":"","h":"","l":"HTML","n":"nep-jain","p":"2025-08-06","s":0},{"c":"2024-05-13","d":"DECISION TREE USING ID3 ALGROTHIM","h":"","l":"Jupyter Notebook","n":"decision-tree-machine-learning","p":"2024-05-13","s":0},{"c":"2024-06-22","d":"azure ai","h":"","l":null,"n":"Azure-AI","p":"2024-06-22","s":0},{"c":"2024-05-24","d":"","h":"","l":"CSS","n":"SANTOSH-KAMAL-PORTFILO","p":"2024-05-24","s":0},{"c":"2024-07-13","d":"","h":"","l":null,"n":"-blog-page","p":"2024-07-13","s":0},{"c":"2024-07-13","d":"using Node.js & Express: For building a fast and scalable server.  MongoDB: For a flexible and scalable database.","h":"","l":null,"n":"jain-blog","p":"2024-07-13","s":0},{"c":"2024-06-25","d":"node js, mongodb ,html","h":"","l":"JavaScript","n":"registration-form","p":"2024-06-25","s":0},{"c":"2024-05-24","d":"","h":"","l":"CSS","n":"sk-portfolio","p":"2024-05-24","s":0},{"c":"2025-10-29","d":"","h":"","l":"HTML","n":"jain-intern","p":"2026-05-10","s":0},{"c":"2024-05-13","d":"","h":"","l":null,"n":"NEWS-PROJECT-ASP.NET-C-","p":"2024-05-13","s":0},{"c":"2025-07-01","d":"","h":"","l":"HTML","n":"idp-flask-dashboard","p":"2025-12-09","s":0},{"c":"2024-05-24","d":"","h":"","l":null,"n":"PORTFOLIO","p":"2024-05-24","s":0},{"c":"2025-09-24","d":"","h":"","l":"HTML","n":"ooa-2","p":"2025-09-24","s":0},{"c":"2024-07-13","d":"","h":"","l":null,"n":"jainblog","p":"2024-07-13","s":0},{"c":"2025-07-10","d":"","h":"","l":"Python","n":"jain_research","p":"2025-07-10","s":0},{"c":"2025-10-28","d":"","h":"","l":"HTML","n":"dyd","p":"2025-11-04","s":0},{"c":"2025-04-14","d":"","h":"","l":null,"n":"dasfs","p":"2025-04-14","s":0},{"c":"2024-05-13","d":"python ,django,dbsqlite","h":"","l":null,"n":"django-student-database","p":"2024-05-13","s":0},{"c":"2024-12-26","d":"","h":"","l":"CSS","n":"DECISION-TREE-USING-RANDOM-STORY-GENERATOR-AI","p":"2024-12-26","s":0},{"c":"2026-10-03","d":"","h":"https://santoshkamal-portfolio.vercel.app","l":"HTML","n":"SANTOSHKAMAL","p":"2026-11-15","s":0},{"c":"2024-05-13","d":"","h":"","l":null,"n":"EBOOK-DJANGO","p":"2024-05-13","s":0},{"c":"2026-09-28","d":"","h":"https://arundhati-gurukulam.vercel.app","l":"HTML","n":"Arundhati-Gurukulam","p":"2026-10-09","s":0},{"c":"2024-05-13","d":"","h":"","l":"Python","n":"DJANGO-WILDFIFE-PROJECT","p":"2024-05-13","s":0},{"c":"2024-05-20","d":"","h":"","l":"JavaScript","n":"A-star-algorithm-","p":"2024-05-20","s":0},{"c":"2026-09-20","d":"","h":"https://attendance-portal-gold.vercel.app","l":"Python","n":"attendance-portal","p":"2026-09-20","s":0},{"c":"2024-07-13","d":"","h":"","l":null,"n":"jain-blog1","p":"2024-07-13","s":0},{"c":"2025-08-06","d":"","h":"","l":"HTML","n":"word-cloud","p":"2025-08-06","s":0},{"c":"2026-10-21","d":"","h":"https://school-erp-five-delta.vercel.app","l":"JavaScript","n":"school-erp","p":"2026-10-21","s":0},{"c":"2024-07-16","d":"","h":"","l":null,"n":"calc","p":"2024-07-16","s":0},{"c":"2025-07-16","d":"","h":"","l":"HTML","n":"university","p":"2026-03-25","s":0},{"c":"2024-05-22","d":"","h":"","l":"JavaScript","n":"GREEDY-ALGORITHM-IN-AI","p":"2024-05-22","s":0},{"c":"2026-08-29","d":"","h":"","l":"JavaScript","n":"ver-1","p":"2026-09-07","s":0},{"c":"2025-10-13","d":"","h":"","l":"Python","n":"RIASEC-SURVEY","p":"2025-10-13","s":0}];
+  var COL={HTML:'#E34C26',JavaScript:'#F1E05A',CSS:'#663399',Python:'#3572A5','Jupyter Notebook':'#DA5B0B',TypeScript:'#3178C6','C#':'#178600','C++':'#F34B7D',C:'#555555'};
+  var LIVE=[
+    {r:'school-erp',t:'School ERP',d:'A school management (ERP) web app, deployed on Vercel.',ab:'ERP',g:'linear-gradient(135deg,#2D5BFF,#7393FF)'},
+    {r:'Arundhati-Gurukulam',t:'Arundhati Gurukulam',d:'The public website for Arundhati Gurukulam.',ab:'AG',g:'linear-gradient(135deg,#E8590C,#F5C518)'},
+    {r:'attendance-portal',t:'Attendance Portal',d:'Intern attendance with face recognition and GPS check-in.',ab:'IN',g:'linear-gradient(135deg,#0E7C66,#3DDC84)'},
+    {r:'SANTOSHKAMAL',t:'This portfolio',d:'The site you are on right now. Hand-built, no framework.',ab:'SK',g:'linear-gradient(135deg,#0E1116,#596070)'}];
+  function esc(x){return String(x==null?'':x).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+  function ago(d){var s=(Date.now()-new Date(d))/864e5;if(s<1)return 'today';if(s<2)return 'yesterday';if(s<30)return Math.floor(s)+' days ago';if(s<365)return Math.floor(s/30.4)+' mo ago';var y=Math.floor(s/365);return y+(y>1?' years ago':' year ago')}
+  function nice(n){return n.replace(/[-_]+/g,' ').trim()||n}
+  var data=SNAP,lang='all',q='',all=false;
+  var list=document.getElementById('ghList'),more=document.getElementById('ghMore');
+  var BOOK='<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5z"/><path d="M4 19.5V21h16"/></svg>';
+  function renderTop(){
+    var by={},years={},n=0;data.forEach(function(r){if(r.l){by[r.l]=(by[r.l]||0)+1;n++}var y=(r.c||'').slice(0,4);if(y)years[y]=(years[y]||0)+1});
+    var langs=Object.keys(by).sort(function(a,b){return by[b]-by[a]});
+    document.getElementById('ghRepos').textContent=data.length;
+    document.getElementById('ghLangs').textContent=langs.length;
+    var ys=Object.keys(years).sort();document.getElementById('ghSince').textContent=ys[0]||'2024';
+    document.getElementById('ghLive').textContent=data.filter(function(r){return r.h}).length||LIVE.length;
+    document.getElementById('ghBar').innerHTML=langs.map(function(l,i){return '<i style="width:'+(by[l]/n*100)+'%;background:'+(COL[l]||'#8B949E')+';animation-delay:'+(i*.08)+'s" title="'+esc(l)+'"></i>'}).join('');
+    document.getElementById('ghLegend').innerHTML=langs.map(function(l){return '<li><span class="ldot" style="background:'+(COL[l]||'#8B949E')+'"></span>'+esc(l)+' <em>'+Math.round(by[l]/n*100)+'%</em></li>'}).join('');
+    var mx=Math.max.apply(null,ys.map(function(y){return years[y]}));
+    document.getElementById('ghYears').innerHTML=ys.map(function(y){return '<div><b>'+years[y]+'</b><i style="height:'+(years[y]/mx*56)+'px"></i><span>'+y+'</span></div>'}).join('');
+    document.getElementById('ghChips').innerHTML=['all'].concat(langs).map(function(l){return '<button class="gchip" data-l="'+esc(l)+'" aria-pressed="'+(l===lang)+'">'+(l==='all'?'All':'<span class="ldot" style="background:'+(COL[l]||'#8B949E')+'"></span>'+esc(l))+'</button>'}).join('');
+    var map={};data.forEach(function(r){map[r.n]=r});
+    document.getElementById('ghLiveGrid').innerHTML=LIVE.map(function(s){var r=map[s.r]||{},url=r.h||(s.r==='SANTOSHKAMAL'?'https://santoshkamal-portfolio.vercel.app':'');
+      return '<article class="site"><div class="site-bar"><i></i><i></i><i></i><span>'+esc(url.replace(/^https?:\/\//,''))+'</span></div><div class="site-hero" style="background:'+s.g+'"><span class="pulse">LIVE</span>'+s.ab+'</div><div class="site-body"><h4>'+esc(s.t)+'</h4><p>'+esc(s.d)+'</p><div class="site-act">'+(url?'<a class="v" href="'+esc(url)+'" target="_blank" rel="noopener">Visit site ↗</a>':'')+'<a href="https://github.com/'+USER+'/'+esc(s.r)+'" target="_blank" rel="noopener">Code ↗</a></div></div></article>'}).join('');
+  }
+  function renderList(){
+    var rows=data.filter(function(r){return (lang==='all'||r.l===lang)&&(!q||(r.n+' '+(r.d||'')).toLowerCase().indexOf(q)>-1)})
+      .sort(function(a,b){return (b.p||'').localeCompare(a.p||'')});
+    var shown=(all||q||lang!=='all')?rows:rows.slice(0,8);
+    list.innerHTML=shown.length?shown.map(function(r){var fresh=(Date.now()-new Date(r.p))/864e5<30;
+      return '<li><a href="https://github.com/'+USER+'/'+encodeURIComponent(r.n)+'" target="_blank" rel="noopener">'+BOOK+'<span class="rn">'+esc(nice(r.n))+'</span><span class="rt">'+(fresh?'<span class="new">NEW</span> ':'')+'updated '+ago(r.p)+'</span><span class="rd">'+(r.l?'<span><span class="ldot" style="background:'+(COL[r.l]||'#8B949E')+'"></span>'+esc(r.l)+'</span>':'')+(r.h?'<span>● live</span>':'')+(r.d?'<q>'+esc(r.d)+'</q>':'')+'</span></a></li>'}).join(''):'<li class="gh-empty">No repositories match that search.</li>';
+    more.hidden=!!(q||lang!=='all')||rows.length<=8;more.textContent=all?'Show fewer':'Show all '+rows.length+' repositories';
+  }
+  document.getElementById('ghChips').addEventListener('click',function(e){var b=e.target.closest('.gchip');if(!b)return;lang=b.dataset.l;[].forEach.call(this.children,function(c){c.setAttribute('aria-pressed',c===b)});renderList()});
+  document.getElementById('ghQ').addEventListener('input',function(){q=this.value.trim().toLowerCase();renderList()});
+  more.addEventListener('click',function(){all=!all;renderList()});
+  renderTop();renderList();
+  if(window.fetch)fetch('https://api.github.com/users/'+USER+'/repos?per_page=100&sort=pushed').then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(js){
+    if(!Array.isArray(js)||!js.length)return;
+    data=js.filter(function(r){return !r.fork}).map(function(r){return {n:r.name,l:r.language,d:r.description||'',h:r.homepage||'',p:(r.pushed_at||'').slice(0,10),c:(r.created_at||'').slice(0,10),s:r.stargazers_count}});
+    renderTop();renderList();var sy=document.getElementById('ghSync');sy.textContent='synced live from GitHub';sy.classList.add('live');
+  }).catch(function(){});
+})();
 
 /* hero photo rotator */
 (function(){
